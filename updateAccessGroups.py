@@ -98,7 +98,6 @@ def remove_email_from_access_group(ACCOUNT_ID, GROUP_ID, valid_email):
         response = requests.put(endpoint, headers=headers, json=payload)
         return response.json()
     elif existing_emails:
-        print("Email not found")
         return {"error": f"Email '{valid_email}' not found in the access group."}
     else:
         print("Could not retrieve access group")
